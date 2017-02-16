@@ -10,11 +10,11 @@ Fork or clone, then run npm install.
 
 ##Folder structure:
 
-1. ###dist
+###dist
 - all.css
 - all.js
 
-2. ###js
+###js
 - controllers
     - mainCtrl.js
 - directives
@@ -24,7 +24,7 @@ Fork or clone, then run npm install.
     - mainService.js
 - app.js
 
-3. ###styles
+###styles
 - base
     - reset.css
 - fonts
@@ -33,12 +33,12 @@ Fork or clone, then run npm install.
     - main.css
     - main.scss
 
-4. ###views
+###views
 - home.html
 - navbar.html
 - random.html
 
-5. gulpfile.js
-6. index.js
-7. package.json
-8. readme.md
+gulpfile.js
+index.js
+package.json
+readme.md
