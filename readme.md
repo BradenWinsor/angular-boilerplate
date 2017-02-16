@@ -38,8 +38,8 @@ Fork or clone, then run npm install.
 - navbar.html
 - random.html
 
- 
+###root level 
 - gulpfile.js
-- index.js
+- index.html
 - package.json
 - readme.md
