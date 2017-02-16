@@ -1,4 +1,4 @@
-AngularJS boilerplate 
+#AngularJS boilerplate 
 
 Includes:
 * ui-router
@@ -8,13 +8,13 @@ Includes:
 Fork or clone, then run npm install.
 
 
-Folder structure:
+##Folder structure:
 
-dist
+1. ###dist
 - all.css
 - all.js
 
-js
+2. ###js
 - controllers
     - mainCtrl.js
 - directives
@@ -24,7 +24,7 @@ js
     - mainService.js
 - app.js
 
-styles
+3. ###styles
 - base
     - reset.css
 - fonts
@@ -33,12 +33,12 @@ styles
     - main.css
     - main.scss
 
-views
+4. ###views
 - home.html
 - navbar.html
 - random.html
 
-gulpfile.js
-index.js
-package.json
-readme.md
+5. gulpfile.js
+6. index.js
+7. package.json
+8. readme.md
