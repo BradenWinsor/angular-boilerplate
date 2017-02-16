@@ -1,3 +1,3 @@
 angular.module('testApp').controller('mainCtrl', function($scope, mainService) {
-    $scope.test = "Hello world!";
+    $scope.test = "Testing the mainCtrl"
 });
