@@ -38,7 +38,8 @@ Fork or clone, then run npm install.
 - navbar.html
 - random.html
 
-gulpfile.js
-index.js
-package.json
-readme.md
+ 
+- gulpfile.js
+- index.js
+- package.json
+- readme.md
