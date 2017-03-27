@@ -3,37 +3,46 @@ const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 
-// Instructions for how task will run.
-gulp.task('concat', function(){
+// Task to compile all JavaScript files using ES6 into ES5
+gulp.task('js', function(){
   // gulp.src(['./js/services/mainService.js', './js/adventurerCard.js', './js/'])       Bad way
   // Use a wildcard instead. Wildcard = *
-  gulp.src(['./js/app.js', './js/**/*.js'])
+  gulp.src(['./public/js/app.js', './public/js/**/*.js'])
   .pipe(babel({
     presets: ['es2015']
   }))
-  .pipe(concat('all.js'))
-  .pipe(gulp.dest('./dist'));
+  .pipe(concat('bundle.js'))
+  .pipe(gulp.dest('./public/dist'));
 });
 
 
-// Compile scss into css files
+// Task to compile all Sass files into CSS
 gulp.task('sass', function() {
   gulp.src([
-    './styles/base/reset.css', 
-    './styles/fonts/fonts.css', 
-    './styles/views/*{.scss,.css}',
-    './styles/**/*.scss'
+    './public/styles/base/reset.css', 
+    './public/styles/fonts/fonts.css', 
+    './public/styles/views/*{.scss,.css}',
+    './public/styles/**/*.scss'
     ])
   .pipe(sass().on('error', sass.logError))
-  .pipe(concat('all.css'))
-  .pipe(gulp.dest('./dist'));
+  .pipe(concat('bundle.css'))
+  .pipe(gulp.dest('./public/dist'));
 });
 
+// Task to watch all files for changes
+// Specify which files you want Gulp to 'watch'. As soon as changes occur to any files, run the task passed inside the brackets
+gulp.task('watch', function() {
+  // Watch for js changes
+  gulp.watch('./public/js/**/*.js', ['js']);
+  // Watch for css/scss changes
+  gulp.watch('./public/styles/**/*.{css, scss}', ['sass'])
+})
 
-gulp.task('default', ['concat', 'sass']);
+// Default Gulp Task. 
+gulp.task('default', ['js', 'sass', 'watch']);
 
+// To execute, run 'gulp' in the terminal and make changes to a js/css file to ensure everything is being watched correctly.
+// Don't forget to change the paths in your index.html to point to the bundle.css/bundle.js
 
 // Gulp watch
 // takes two arguments: the file(s) to watch, and then the task to do if it notices a change.
-gulp.watch('./js/**/*.js', ['concat']);
-gulp.watch('./styles/**/*.{css, scss}', ['sass']);
